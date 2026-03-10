@@ -1,0 +1,26 @@
+# docker-compose.yml -- Titanium-Vault V13.2
+version: "3.9"
+services:
+  titanium-vault:
+    build: .
+    image: titanium-vault:v13.2
+    volumes:
+      - receipts_data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  titanium-vault-test:
+    build: .
+    image: titanium-vault:v13.2
+    volumes:
+      - test_data:/app/data
+    entrypoint: ["python", "-m", "pytest", "tests/", "-v", "--tb=short"]
+    environment:
+      - PYTHONUNBUFFERED=1
+    profiles:
+      - test
+
+volumes:
+  receipts_data:
+  test_data:

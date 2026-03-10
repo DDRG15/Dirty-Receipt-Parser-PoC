@@ -1,0 +1,3 @@
+# requirements.txt -- Titanium-Vault V13.2
+pytest>=7.0.0
+portalocker>=2.7.0

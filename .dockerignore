@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.pyo
+.env
+.vscode
+.git
+data/output/*.db
+data/output/*.db-wal
+data/output/*.db-shm
+data/output/*.json
+data/output/*.jsonl
